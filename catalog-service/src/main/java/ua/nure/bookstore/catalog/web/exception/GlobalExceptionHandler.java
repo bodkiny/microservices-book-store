@@ -1,13 +1,12 @@
 package ua.nure.bookstore.catalog.web.exception;
 
+import java.net.URI;
+import java.time.Instant;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ua.nure.bookstore.catalog.domain.ProductNotFoundException;
-
-import java.net.URI;
-import java.time.Instant;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

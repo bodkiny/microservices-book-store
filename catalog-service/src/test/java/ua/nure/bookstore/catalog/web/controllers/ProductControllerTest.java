@@ -1,18 +1,16 @@
 package ua.nure.bookstore.catalog.web.controllers;
 
+import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 
 import io.restassured.http.ContentType;
+import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.jdbc.Sql;
 import ua.nure.bookstore.catalog.AbstractIntegreationTest;
 import ua.nure.bookstore.catalog.domain.Product;
-
-import java.math.BigDecimal;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.is;
 
 @Sql("/test-data.sql")
 class ProductControllerTest extends AbstractIntegreationTest {

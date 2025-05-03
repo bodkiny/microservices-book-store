@@ -1,14 +1,13 @@
 package ua.nure.bookstore.catalog.domain;
 
 import jakarta.transaction.Transactional;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ua.nure.bookstore.catalog.ApplicationProperties;
-
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -35,10 +34,7 @@ public class ProductService {
                 productPage.isFirst(),
                 productPage.isLast(),
                 productPage.hasNext(),
-                productPage.hasPrevious()
-        );
-
-
+                productPage.hasPrevious());
     }
 
     public Optional<Product> getProductByCode(String code) {
