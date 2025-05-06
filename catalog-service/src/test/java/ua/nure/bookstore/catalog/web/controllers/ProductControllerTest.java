@@ -9,11 +9,11 @@ import io.restassured.http.ContentType;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.jdbc.Sql;
-import ua.nure.bookstore.catalog.AbstractIntegreationTest;
+import ua.nure.bookstore.catalog.AbstractIntegrationTest;
 import ua.nure.bookstore.catalog.domain.Product;
 
 @Sql("/test-data.sql")
-class ProductControllerTest extends AbstractIntegreationTest {
+class ProductControllerTest extends AbstractIntegrationTest {
 
     @Test
     void shouldReturnProducts() {
