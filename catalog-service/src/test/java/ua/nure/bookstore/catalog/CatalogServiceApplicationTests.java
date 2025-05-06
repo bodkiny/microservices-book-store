@@ -2,7 +2,7 @@ package ua.nure.bookstore.catalog;
 
 import org.junit.jupiter.api.Test;
 
-class CatalogServiceApplicationTests extends AbstractIntegreationTest {
+class CatalogServiceApplicationTests extends AbstractIntegrationTest {
 
     @Test
     void contextLoads() {}
