@@ -45,7 +45,8 @@ jobs:
       - name: Build and Publish Docker Image
         run: |
           ./mvnw spring-boot:build-image \
-          -Dspring-boot.build-image.imageName=${DOCKER_IMAGE_NAME}:${IMAGE_TAG} \
-          -DskipTests
+            -Dspring-boot.build-image.image.name=${DOCKER_IMAGE_NAME} \
+            -Dspring-boot.build-image.image.tags=${IMAGE_TAG} \
+            -DskipTests
           echo "Pushing image ${DOCKER_IMAGE_NAME}:${IMAGE_TAG}..."
           docker push ${DOCKER_IMAGE_NAME}:${IMAGE_TAG}
