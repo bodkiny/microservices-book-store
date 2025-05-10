@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import ua.nure.bookstore.orders.domain.InvalidOrderException;
 import ua.nure.bookstore.orders.domain.OrderNotFoundException;
 
 @RestControllerAdvice
@@ -64,5 +65,16 @@ class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         problemDetail.setProperty("error_category", "Generic");
         problemDetail.setProperty("timestamp", Instant.now());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problemDetail);
+    }
+
+    @ExceptionHandler(InvalidOrderException.class)
+    ProblemDetail handleInvalidOrderException(InvalidOrderException e) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
+        problemDetail.setTitle("Invalid Order Creation Request");
+        problemDetail.setType(BAD_REQUEST_TYPE);
+        problemDetail.setProperty("service", SERVICE_NAME);
+        problemDetail.setProperty("error_category", "Generic");
+        problemDetail.setProperty("timestamp", Instant.now());
+        return problemDetail;
     }
 }
