@@ -1,20 +1,18 @@
 package ua.nure.bookstore.orders.domain;
 
+import java.time.LocalDateTime;
+import java.util.Set;
+import java.util.UUID;
+import java.util.stream.Collectors;
 import ua.nure.bookstore.orders.domain.models.OrderCancelledEvent;
 import ua.nure.bookstore.orders.domain.models.OrderCreatedEvent;
 import ua.nure.bookstore.orders.domain.models.OrderDeliveredEvent;
 import ua.nure.bookstore.orders.domain.models.OrderErrorEvent;
 import ua.nure.bookstore.orders.domain.models.OrderItem;
 
-import java.time.LocalDateTime;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-
 class OrderEventMapper {
 
-    private OrderEventMapper() {
-    }
+    private OrderEventMapper() {}
 
     static OrderCreatedEvent buildOrderCreatedEvent(OrderEntity order) {
         return new OrderCreatedEvent(

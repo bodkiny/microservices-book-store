@@ -9,9 +9,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import ua.nure.bookstore.orders.domain.models.OrderEventType;
-
 import java.time.LocalDateTime;
+import ua.nure.bookstore.orders.domain.models.OrderEventType;
 
 @Entity
 @Table(name = "order_events")

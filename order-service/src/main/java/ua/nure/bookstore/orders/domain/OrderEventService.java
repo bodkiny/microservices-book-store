@@ -2,6 +2,7 @@ package ua.nure.bookstore.orders.domain;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Sort;
@@ -13,8 +14,6 @@ import ua.nure.bookstore.orders.domain.models.OrderDeliveredEvent;
 import ua.nure.bookstore.orders.domain.models.OrderErrorEvent;
 import ua.nure.bookstore.orders.domain.models.OrderEventType;
 
-import java.util.List;
-
 @Service
 @Transactional
 public class OrderEventService {
@@ -24,7 +23,10 @@ public class OrderEventService {
     private final OrderEventPublisher orderEventPublisher;
     private final ObjectMapper objectMapper;
 
-    OrderEventService(OrderEventRepository orderEventRepository, OrderEventPublisher orderEventPublisher, ObjectMapper objectMapper) {
+    OrderEventService(
+            OrderEventRepository orderEventRepository,
+            OrderEventPublisher orderEventPublisher,
+            ObjectMapper objectMapper) {
         this.orderEventRepository = orderEventRepository;
         this.orderEventPublisher = orderEventPublisher;
         this.objectMapper = objectMapper;

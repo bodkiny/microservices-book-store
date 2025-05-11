@@ -1,6 +1,7 @@
 package ua.nure.bookstore.orders.domain;
 
 import jakarta.transaction.Transactional;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -8,8 +9,6 @@ import ua.nure.bookstore.orders.domain.models.CreateOrderRequest;
 import ua.nure.bookstore.orders.domain.models.CreateOrderResponse;
 import ua.nure.bookstore.orders.domain.models.OrderCreatedEvent;
 import ua.nure.bookstore.orders.domain.models.OrderStatus;
-
-import java.util.List;
 
 @Service
 @Transactional
@@ -55,7 +54,8 @@ public class OrderService {
             } else {
                 log.info("OrderNumber: {} cannot be delivered", order.getOrderNumber());
                 orderRepository.updateOrderStatus(order.getOrderNumber(), OrderStatus.CANCELLED);
-                orderEventService.save(OrderEventMapper.buildOrderCancelledEvent(order, "Cannot deliver to the location"));
+                orderEventService.save(
+                        OrderEventMapper.buildOrderCancelledEvent(order, "Cannot deliver to the location"));
             }
         } catch (RuntimeException e) {
             log.error("Failed to process Order with orderNumber: {}", order.getOrderNumber(), e);
@@ -65,6 +65,7 @@ public class OrderService {
     }
 
     private boolean canBeDelivered(OrderEntity order) {
-        return DELIVERY_ALLOWED_COUNTRIES.contains(order.getDeliveryAddress().country().toUpperCase());
+        return DELIVERY_ALLOWED_COUNTRIES.contains(
+                order.getDeliveryAddress().country().toUpperCase());
     }
 }

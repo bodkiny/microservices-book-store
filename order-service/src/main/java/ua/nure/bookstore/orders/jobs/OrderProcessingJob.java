@@ -1,5 +1,6 @@
 package ua.nure.bookstore.orders.jobs;
 
+import java.time.Instant;
 import net.javacrumbs.shedlock.core.LockAssert;
 import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.slf4j.Logger;
@@ -7,8 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import ua.nure.bookstore.orders.domain.OrderService;
-
-import java.time.Instant;
 
 @Component
 class OrderProcessingJob {
