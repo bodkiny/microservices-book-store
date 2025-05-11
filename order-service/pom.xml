@@ -143,6 +143,16 @@
 			<artifactId>wiremock-testcontainers-module</artifactId>
 			<version>1.0-alpha-15</version>
 		</dependency>
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-spring</artifactId>
+            <version>6.6.0</version>
+        </dependency>
+		<dependency>
+			<groupId>net.javacrumbs.shedlock</groupId>
+			<artifactId>shedlock-provider-jdbc-template</artifactId>
+			<version>6.6.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
