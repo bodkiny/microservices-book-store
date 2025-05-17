@@ -1,4 +1,4 @@
-package ua.nure.api_gateway;
+package ua.nure.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
