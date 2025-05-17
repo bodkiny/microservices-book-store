@@ -30,7 +30,7 @@ spring:
             - Path=/catalog/**
           filters:
             - RewritePath=/catalog/?(?<segment>.*), /${segment}
-        - id: order-service
+        - id: orders-service
           uri: ${ORDER_SERVICE_URL:http://localhost:8082}
           predicates:
             - Path=/orders/**
@@ -41,7 +41,7 @@ spring:
           predicates:
             - Path=/v3/api-docs/**
           filters:
-            - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/\v3/api-docs/
+            - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/v3/api-docs
 
   mvc:
     problemdetails:
