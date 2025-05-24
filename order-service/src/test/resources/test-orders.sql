@@ -7,9 +7,9 @@ insert into orders (id, order_number, username,
                     delivery_address_line1, delivery_address_line2, delivery_address_city,
                     delivery_address_state, delivery_address_zip_code, delivery_address_country,
                     status, comments)
-values (1, 'order-123', 'johndoe', 'John Doe', 'johnD@gmail.com', '666666666', '123 Main Str', 'Apt 1', 'Dallas', 'TX', '75001',
+values (1, 'order-123', 'test', 'John Doe', 'johnD@gmail.com', '666666666', '123 Main Str', 'Apt 1', 'Dallas', 'TX', '75001',
         'USA', 'NEW', null),
-       (2, 'order-456', 'johndoe', 'Rachel Smith', 'rachelS@gmail.com', '777777777', '13 Madison Str', 'Apt 43', 'Los Angeles', 'CA',
+       (2, 'order-456', 'test', 'Rachel Smith', 'rachelS@gmail.com', '777777777', '13 Madison Str', 'Apt 43', 'Los Angeles', 'CA',
         '90001', 'USA', 'NEW', null);
 
 insert into order_items(order_id, code, name, price, quantity)

@@ -37,8 +37,8 @@ import org.wiremock.integrations.testcontainers.WireMockContainer;
 public abstract class AbstractIntegrationTest {
     static final String CLIENT_ID = "bookstore-webapp";
     static final String CLIENT_SECRET = "m2QsJmmcHY0Sw5D6VDcxmkjfwI7RXCx7";
-    static final String USERNAME = "johndoe";
-    static final String PASSWORD = "john1234";
+    static final String USERNAME = "test";
+    static final String PASSWORD = "test";
 
     @Autowired
     OAuth2ResourceServerProperties oAuth2ResourceServerProperties;
@@ -48,19 +48,6 @@ public abstract class AbstractIntegrationTest {
 
     @Autowired
     protected MockMvc mockMvc;
-
-    static WireMockContainer wiremockServer = new WireMockContainer("wiremock/wiremock:3.5.2-alpine");
-
-    @BeforeAll
-    static void beforeAll() {
-        wiremockServer.start();
-        configureFor(wiremockServer.getHost(), wiremockServer.getPort());
-    }
-
-    @DynamicPropertySource
-    static void configureProperties(DynamicPropertyRegistry registry) {
-        registry.add("orders.catalog-service-url", wiremockServer::getBaseUrl);
-    }
 
     @BeforeEach
     void setUp() {
