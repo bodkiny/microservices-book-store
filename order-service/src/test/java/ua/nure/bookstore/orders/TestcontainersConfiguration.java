@@ -41,7 +41,7 @@ class TestcontainersConfiguration {
 
     @Bean
     KeycloakContainer keycloak() {
-        return new KeycloakContainer(KEYCLOAK_IMAGE).withRealmImportFile(realmImportFile);
+        return new KeycloakContainer(KEYCLOAK_IMAGE).withRealmImportFile("test-bookstore-realm.json");
     }
 
     @Bean
