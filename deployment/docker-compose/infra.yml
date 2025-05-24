@@ -89,7 +89,7 @@ services:
     container_name: keycloak
     hostname: keycloak
     volumes:
-        - "C:/kc/realm-config:/opt/keycloak/data/import"
+        - "./realm-config:/opt/keycloak/data/import"
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin123
