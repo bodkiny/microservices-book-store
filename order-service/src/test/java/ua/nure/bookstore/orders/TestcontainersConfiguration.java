@@ -1,5 +1,7 @@
 package ua.nure.bookstore.orders;
 
+import static com.github.tomakehurst.wiremock.client.WireMock.configureFor;
+
 import dasniko.testcontainers.keycloak.KeycloakContainer;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -9,8 +11,6 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.RabbitMQContainer;
 import org.testcontainers.utility.DockerImageName;
 import org.wiremock.integrations.testcontainers.WireMockContainer;
-
-import static com.github.tomakehurst.wiremock.client.WireMock.configureFor;
 
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
