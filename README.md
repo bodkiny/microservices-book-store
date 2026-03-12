@@ -2,9 +2,10 @@
 
 This repository contains the source code for a sample Microservices-based Book Store application.
 
-![BookStore Microservices Architecture](https://github.com/sivaprasadreddy/spring-boot-microservices-course/raw/main/docs/bookstore-spring-microservices.png)
-
 ## Modules
+
+<img width="764" height="385" alt="bookstore-spring-microservices" src="https://github.com/user-attachments/assets/50231369-dc25-417a-a7f2-54414a0cc178" />
+
 
 * **catalog-service**:  
   Provides REST APIs for managing the catalog of products (books).  
